@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+}
+
+.body {
+    position: relative;
+    
+}
+
+.backgroundContainer {
+    position: relative;
+    z-index: 0;
+    min-height: 100vh;
+}
+
+.layer1 {
+    min-height: 60vh;
+    background-color: rgb(133, 85, 85);
+}
+
+.layer2 {
+    min-height: 10vh;
+    background-color: rgb(171, 110, 110);
+}
+
+.layer3 {
+    min-height: 30vh;
+    background-color: rgb(110, 76, 76);
+}
+
+.clockBody {
+    position: absolute;
+    z-index: 2;
+    background: rgba(140, 140, 140, 0.3);
+    min-height: 50vh;
+    min-width: 100vh;
+    backdrop-filter: blur(40px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    font-size: 170px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.clockBody span {
+    min-width: 200px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    line-height: 1;
+    top: -20px
+}
+
+.clockBody span::after {
+    font-size: 20px;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#hrs::after {
+    content: 'HOURS';
+}
+
+#mins::after {
+    content: 'MINS';
+}
