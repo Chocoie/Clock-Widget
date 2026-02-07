@@ -33,6 +33,11 @@
     background-color: rgb(110, 76, 76);
 }
 
+.clockContainer {
+    z-index: 1;
+    height: 0;
+}
+
 .clockBody {
     position: absolute;
     z-index: 2;
@@ -58,7 +63,19 @@
     text-align: center;
     position: relative;
     line-height: 1;
-    top: -20px
+    top: -20px;
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+@keyframes pop {
+    50% {
+        transform: scale(2);
+    }
+}
+
+.hourBump {
+    animation: pop 0.8s ease-in-out;
 }
 
 .clockBody span::after {
@@ -75,4 +92,35 @@
 
 #mins::after {
     content: 'MINS';
+}
+
+#snoopyImg {
+    position: absolute;
+    height: auto;
+    width: 250px;
+    z-index: 2;
+    left: 0;
+    transform: translateX(-500px, -50%); 
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.activateSnoopy {
+    visibility: visible !important;
+    animation: snoopyDash 0.8s ease-out forwards;
+}
+
+@keyframes snoopyDash {
+    0% {
+        left: -500px;
+        transform: translateX(-50%) scale(1);
+    }
+    70% {
+        left: -50px;
+        transform: translateX(-50%) scale(1.1);
+    }
+    100% {
+        left: -80px;
+        transform: translateX(-50%) scale(1);
+    }
 }
